@@ -1,4 +1,4 @@
-# 🛒 React CArt
+# 🛒 React Cart
 
 Simple cart app where you can add to your Cart the products if they are "In Stock"
 
