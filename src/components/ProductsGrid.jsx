@@ -24,7 +24,6 @@ class ProductsGrid extends Component {
     products: PropTypes.array.isRequired,
     onAddToCart: PropTypes.func.isRequired
   }
-
 }
 
 export default ProductsGrid;

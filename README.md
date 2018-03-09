@@ -15,6 +15,7 @@ Simple cart app where you can add to your Cart the products
 * react-loading - https://www.npmjs.com/package/react-loading
 * prop-types - https://www.npmjs.com/package/prop-types
 * json-server - https://github.com/typicode/json-server
+* react-awesome-modal - https://www.npmjs.com/package/react-awesome-modal
 
 ## To-do
 

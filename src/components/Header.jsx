@@ -10,7 +10,7 @@ class Header extends Component {
       <header>
         <div className="shop-logo">
           <a rel="noopener noreferrer" target="_blank" href="http://www.vimcar.de">
-            <img alt="shop" src={cartIcon}></img>
+            <img alt="shop" src={shopLogo}></img>
           </a>
         </div>
         <div className="cart-section">

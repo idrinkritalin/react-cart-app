@@ -4,6 +4,7 @@ import ReactLoading from 'react-loading';
 import { checkStatus } from './utils/checkStatus';
 import Header from './components/Header';
 import ProductsGrid from './components/ProductsGrid';
+import Modal from 'react-awesome-modal';
 
 class CartApp extends Component {
   constructor(props) {
@@ -12,16 +13,25 @@ class CartApp extends Component {
     this.state = {
       cart: [],
       products : [],
-      isLoaded : false
+      isLoaded : false,
+      isModalVisible : false,
     }
 
     this.addToCart = this.addToCart.bind(this);
   }
 
   addToCart(item) {
-    this.setState({
-      cart: [...this.state.cart, item]
-    })
+    item.qty !== 0 ? (
+      this.setState({
+        cart: [...this.state.cart, item]
+      })
+    ) : (
+      this.setState({ isModalVisible: true })
+    )
+  }
+
+  closeModal() {
+    this.setState({ isModalVisible : false });
   }
 
   componentDidMount() {
@@ -36,7 +46,7 @@ class CartApp extends Component {
   }
 
   render() {
-    const { cart, products, isLoaded } = this.state
+    const { cart, products, isLoaded, isModalVisible } = this.state
     return (
       <div className="CartApp">
         <Header
@@ -49,11 +59,18 @@ class CartApp extends Component {
             onAddToCart={this.addToCart}
           />
         ) : (
-          <div class="loading-spin">
+          <div className="loading-spin">
             <ReactLoading type='spin' color='#299ABF' height='50' width='50' />
             <p>Loading products...</p>
           </div>
         ) }
+
+        <Modal visible={isModalVisible} width="400" height="110" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+          <div id="modal-warning">
+              <p>Unfortunately the product is 'Out Of Stock'</p>
+              <a href="#" onClick={() => this.closeModal()}>&times;</a>
+          </div>
+        </Modal>
 
       </div>
     );
