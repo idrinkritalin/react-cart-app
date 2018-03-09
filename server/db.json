@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "Beachside Watch",
+      "url": "./design/h38ss-dtbl-sel-201603@2x.png",
+      "qty": "1"
+    },
+    {
+      "id": 1,
+      "name": "Andromeda Watch",
+      "url": "./design/h38ss-dtbl-sel-201603@2x.png",
+      "qty": "0"
+    },
+    {
+      "id": 2,
+      "name": "Cool Watch",
+      "url": "./design/h38ss-dtbl-sel-201603@2x.png",
+      "qty": "5"
+    },
+    {
+      "id": 3,
+      "name": "TopGun Watch",
+      "url": "./design/h38ss-dtbl-sel-201603@2x.png",
+      "qty": "8"
+    },
+    {
+      "id": 4,
+      "name": "Majesty Watch",
+      "url": "./design/h38ss-dtbl-sel-201603@2x.png",
+      "qty": "2"
+    },
+    {
+      "id": 5,
+      "name": "Defender Watch",
+      "url": "./design/h38ss-dtbl-sel-201603@2x.png",
+      "qty": "0"
+    }
+  ]
+}
