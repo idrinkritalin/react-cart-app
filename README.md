@@ -1,6 +1,6 @@
 # 🛒 React Cart
 
-Simple cart app where you can add to your Cart the products
+Simple react cart app where you can add to your Cart the products fetched from a JSON local server.
 
 ## Setup
 
@@ -19,4 +19,4 @@ Simple cart app where you can add to your Cart the products
 
 ## To-do
 
-* Convert this project with Redux
+* Convert this project using Redux
