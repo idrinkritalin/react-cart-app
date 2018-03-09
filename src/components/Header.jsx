@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
-import logo from '../img/vimcar-logo.svg';
-import cartImg from '../img/cart.svg';
+import '../styles/header.css';
+import shopLogo from '../img/vimcar-logo.svg';
+import cartIcon from '../img/cart.svg';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
     return (
-      <div>
-        <p>{this.props.cartedItems.length}</p>
-        <img alt="logo" src={cartImg}></img>
-      </div>
+      <header>
+        <div className="shop-logo">
+          <a rel="noopener noreferrer" target="_blank" href="http://www.vimcar.de">
+            <img alt="shop" src={cartIcon}></img>
+          </a>
+        </div>
+        <div className="cart-section">
+          <img alt="cart" src={cartIcon}></img>
+          <div>
+            <span>{this.props.cartedItems.length}</span>
+          </div>
+        </div>
+      </header>
     );
   }
 

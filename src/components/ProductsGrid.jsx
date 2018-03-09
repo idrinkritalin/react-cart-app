@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import '../styles/productsGrid.css';
 import PropTypes from 'prop-types';
 
 class ProductsGrid extends Component {
   render() {
     const { products, onAddToCart } = this.props
     return (
-      <div>
+      <section id="products-grid">
         {products.map(product => (
-          <div key={product.id}>
-            <img alt={product.name} src={product.url}></img>
+          <div className="product-container" key={product.id}>
+            <img alt={product.name} className="product-image" src={product.url}></img>
+            <div className="overlay">
+              <button className="cta-text" onClick={() => onAddToCart(product)}>Add To Cart</button>
+            </div>
             <p>{product.name}</p>
-            <button onClick={() => onAddToCart(product)}>Add To Cart</button>
           </div>
         ))}
-      </div>
+      </section>
     );
   }
 

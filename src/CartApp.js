@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import './CartApp.css';
 import ReactLoading from 'react-loading';
 import { checkStatus } from './utils/checkStatus';
 import Header from './components/Header';
 import ProductsGrid from './components/ProductsGrid';
 
-class App extends Component {
+class CartApp extends Component {
   constructor(props) {
     super(props)
 
@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     const { cart, products, isLoaded } = this.state
     return (
-      <div className="App">
+      <div className="CartApp">
         <Header
           cartedItems={cart}
         />
@@ -49,7 +49,10 @@ class App extends Component {
             onAddToCart={this.addToCart}
           />
         ) : (
-          <ReactLoading type='spin' color='#299ABF' height='20' width='50' />
+          <div class="loading-spin">
+            <ReactLoading type='spin' color='#299ABF' height='50' width='50' />
+            <p>Loading products...</p>
+          </div>
         ) }
 
       </div>
@@ -57,4 +60,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default CartApp;
