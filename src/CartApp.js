@@ -68,7 +68,7 @@ class CartApp extends Component {
         <Modal visible={isModalVisible} width="400" height="110" effect="fadeInUp" onClickAway={() => this.closeModal()}>
           <div id="modal-warning">
               <p>Unfortunately the product is 'Out Of Stock'</p>
-              <a href="#" onClick={() => this.closeModal()}>&times;</a>
+              <a onClick={() => this.closeModal()}>&times;</a>
           </div>
         </Modal>
 
