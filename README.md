@@ -12,6 +12,7 @@ Simple react cart app where you can add to your Cart the products fetched from a
 ## Framework and Dependencies
 
 * react - https://reactjs.org
+* react-redux - https://redux.js.org
 * react-loading - https://www.npmjs.com/package/react-loading
 * prop-types - https://www.npmjs.com/package/prop-types
 * json-server - https://github.com/typicode/json-server

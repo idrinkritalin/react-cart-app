@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import '../styles/productsGrid.css';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import '../styles/productsGrid.css'
+import PropTypes from 'prop-types'
 
 class ProductsGrid extends Component {
   render() {
@@ -26,4 +26,4 @@ class ProductsGrid extends Component {
   }
 }
 
-export default ProductsGrid;
+export default ProductsGrid

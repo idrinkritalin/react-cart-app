@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import './CartApp.css';
-import ReactLoading from 'react-loading';
-import { checkStatus } from './utils/checkStatus';
-import Header from './components/Header';
-import ProductsGrid from './components/ProductsGrid';
-import Modal from 'react-awesome-modal';
+import React, { Component } from 'react'
+import './CartApp.css'
+import ReactLoading from 'react-loading'
+import { checkStatus } from './utils/checkStatus'
+import Header from './components/Header'
+import ProductsGrid from './components/ProductsGrid'
+import Modal from 'react-awesome-modal'
 
 class CartApp extends Component {
   constructor(props) {
@@ -14,10 +14,10 @@ class CartApp extends Component {
       cart: [],
       products : [],
       isLoaded : false,
-      isModalVisible : false,
+      isModalVisible : false
     }
 
-    this.addToCart = this.addToCart.bind(this);
+    this.addToCart = this.addToCart.bind(this)
   }
 
   addToCart(item) {
@@ -31,7 +31,7 @@ class CartApp extends Component {
   }
 
   closeModal() {
-    this.setState({ isModalVisible : false });
+    this.setState({ isModalVisible : false })
   }
 
   componentDidMount() {
@@ -41,7 +41,7 @@ class CartApp extends Component {
       .then(checkStatus)
       .then(response => response.json())
       .then(json => {
-        this.setState({products:json, isLoaded:true});
+        this.setState({products:json, isLoaded:true})
       });
   }
 
@@ -77,4 +77,4 @@ class CartApp extends Component {
   }
 }
 
-export default CartApp;
+export default CartApp
