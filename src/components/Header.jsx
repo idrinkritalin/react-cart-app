@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/header.css';
-import shopLogo from '../img/vimcar-logo.svg';
+import shopLogo from '../img/shop-logo.png';
 import cartIcon from '../img/cart.svg';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <header>
         <div className="shop-logo">
-          <a rel="noopener noreferrer" target="_blank" href="http://www.vimcar.de">
+          <a rel="noopener noreferrer" target="_blank" href="http://www.nosto.com">
             <img alt="shop" src={shopLogo}></img>
           </a>
         </div>
