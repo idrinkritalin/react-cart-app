@@ -1,31 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../styles/header.css'
 import shopLogo from '../img/shop-logo.png'
 import cartIcon from '../img/cart.svg'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-class Header extends Component {
-  render() {
-    return (
-      <header>
-        <div className="shop-logo">
-          <a rel="noopener noreferrer" target="_blank" href="http://www.nosto.com">
-            <img alt="shop" src={shopLogo}></img>
-          </a>
+const Header = (props) => {
+  return (
+    <header>
+      <div className="shop-logo">
+        <a rel="noopener noreferrer" target="_blank" href="http://www.nosto.com">
+          <img alt="shop" src={shopLogo}></img>
+        </a>
+      </div>
+      <div className="cart-section">
+        <img alt="cart" src={cartIcon}></img>
+        <div>
+          <span>{props.cart.length}</span>
         </div>
-        <div className="cart-section">
-          <img alt="cart" src={cartIcon}></img>
-          <div>
-            <span>{this.props.cartedItems.length}</span>
-          </div>
-        </div>
-      </header>
-    );
-  }
+      </div>
+    </header>
+  )
+}
 
-  static propTypes = {
-    cartedItems: PropTypes.array.isRequired
+Header.propTypes = {
+  cart: PropTypes.array.isRequired
+}
+
+const mapStateToProps = (cart) => {
+  return {
+    cart
   }
 }
 
-export default Header
+export default connect(mapStateToProps)(Header)
