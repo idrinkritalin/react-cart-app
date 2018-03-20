@@ -5,33 +5,38 @@ import { checkStatus } from './utils/checkStatus'
 import Header from './components/Header'
 import ProductsGrid from './components/ProductsGrid'
 import Modal from 'react-awesome-modal'
+import { addToCart } from './actions'
+import { connect } from 'react-redux'
 
 class CartApp extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
+  //
+  //   this.state = {
+  //     cart: [],
+  //     products : [],
+  //     isLoaded : false,
+  //     isModalVisible : false
+  //   }
+  //
+  //   this.addToCart = this.addToCart.bind(this)
+  // }
+  //
+  // addToCart(item) {
+  //   item.qty !== 0 ? (
+  //     this.setState({
+  //       cart: [...this.state.cart, item]
+  //     })
+  //   ) : (
+  //     this.setState({ isModalVisible: true })
+  //   )
+  // }
 
-    this.state = {
-      cart: [],
-      products : [],
-      isLoaded : false,
-      isModalVisible : false
-    }
-
-    this.addToCart = this.addToCart.bind(this)
-  }
-
-  addToCart(item) {
-    item.qty !== 0 ? (
-      this.setState({
-        cart: [...this.state.cart, item]
-      })
-    ) : (
-      this.setState({ isModalVisible: true })
-    )
-  }
-
-  closeModal() {
-    this.setState({ isModalVisible : false })
+  state = {
+    cart: [],
+    products: [],
+    isLoaded: false,
+    isModalVisible: false
   }
 
   componentDidMount() {
@@ -45,7 +50,12 @@ class CartApp extends Component {
       });
   }
 
+  closeModal() {
+    this.setState({ isModalVisible : false })
+  }
+
   render() {
+    console.log('Props', this.props)
     const { cart, products, isLoaded, isModalVisible } = this.state
     return (
       <div className="CartApp">
@@ -77,4 +87,16 @@ class CartApp extends Component {
   }
 }
 
-export default CartApp
+function mapStateToProps (cart) {
+  return {
+    cart
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    addToCart: (data) => dispatch(addToCart(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartApp)
