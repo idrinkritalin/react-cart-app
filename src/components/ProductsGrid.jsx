@@ -45,7 +45,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ProductsGrid)
 // import Modal from 'react-awesome-modal'
 
 // <Modal visible={props.availabilty} width="400" height="110" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-//   <div id="modal-warning">
+//   <div>
 //       <p>Unfortunately the product is 'Out Of Stock'</p>
 //       <a onClick={() => this.closeModal()}>&times;</a>
 //   </div>
