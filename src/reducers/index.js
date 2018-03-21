@@ -1,6 +1,5 @@
 import {
-  ADD_TO_CART,
-  RAISE_ERROR
+  ADD_TO_CART
 } from '../actions'
 
 const initialCartState = []
@@ -14,8 +13,6 @@ function cart (state = initialCartState, action) {
         ...state,
         product
       ]
-    case RAISE_ERROR :
-      return state
     default :
       return state
   }

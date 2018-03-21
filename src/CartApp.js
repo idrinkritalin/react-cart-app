@@ -4,13 +4,11 @@ import ReactLoading from 'react-loading'
 import { checkStatus } from './utils/checkStatus'
 import Header from './components/Header'
 import ProductsGrid from './components/ProductsGrid'
-import Modal from 'react-awesome-modal'
 
 class CartApp extends Component {
   state = {
     products: [],
-    isLoaded: false,
-    isModalVisible: false
+    isLoaded: false
   }
 
   componentDidMount() {
@@ -24,12 +22,8 @@ class CartApp extends Component {
       });
   }
 
-  closeModal() {
-    this.setState({ isModalVisible : false })
-  }
-
   render() {
-    const { products, isLoaded, isModalVisible } = this.state
+    const { products, isLoaded } = this.state
     return (
       <div className="CartApp">
         <Header/>
@@ -44,13 +38,6 @@ class CartApp extends Component {
             <p>Loading products...</p>
           </div>
         ) }
-
-        <Modal visible={isModalVisible} width="400" height="110" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-          <div id="modal-warning">
-              <p>Unfortunately the product is 'Out Of Stock'</p>
-              <a onClick={() => this.closeModal()}>&times;</a>
-          </div>
-        </Modal>
 
       </div>
     );

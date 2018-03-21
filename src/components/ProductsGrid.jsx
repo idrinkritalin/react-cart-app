@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/productsGrid.css'
 import PropTypes from 'prop-types'
-import { addToCart, raiseError } from '../actions'
+import { addToCart } from '../actions'
 import { connect } from 'react-redux'
 
 const ProductsGrid = (props) => {
@@ -34,9 +34,25 @@ const mapStateToProps = (cart) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (data) => dispatch(addToCart(data)),
-    raiseError: (data) => dispatch(raiseError(data))
+    addToCart: (data) => dispatch(addToCart(data))
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsGrid)
+
+///// SOME IDEAS FOR THE 'OUT OF STOCK' MODAL
+
+// import Modal from 'react-awesome-modal'
+
+// <Modal visible={props.availabilty} width="400" height="110" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+//   <div id="modal-warning">
+//       <p>Unfortunately the product is 'Out Of Stock'</p>
+//       <a onClick={() => this.closeModal()}>&times;</a>
+//   </div>
+// </Modal>
+
+// closeModal() {
+//   this.setState({ props.availabilty : false })
+// }
+
+/////

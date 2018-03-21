@@ -18,6 +18,8 @@ Simple react cart app where you can add to your Cart the products fetched from a
 * json-server - https://github.com/typicode/json-server
 * react-awesome-modal - https://www.npmjs.com/package/react-awesome-modal
 
-## To-do
+## ⏳  To-do
 
-* Convert this project using Redux
+* ✔️ Convert this project using Redux
+* ⏳ Add the feature to change the quantity in the server based on the product carted (POST)
+* ⏳ Add the feature that if the product is out of stock will show a Modal
