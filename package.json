@@ -2,7 +2,7 @@
   "name": "react-cart-app",
   "version": "0.2.0",
   "private": true,
-  "description": "Add to Cart app with React",
+  "description": "Add to Cart app with React + Redux",
   "author": "Stefano Veltri",
   "repository": {
     "type": "git",
